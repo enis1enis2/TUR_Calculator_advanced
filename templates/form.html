@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Akıllı Evler için Enerji Verimlilik Hesaplayıcısı</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__text">
+      <h1>Evinizin enerji verimliliğini hesaplayın!</h1>
+      <p>Girişimde bulunun ve aşırı enerji tüketimi sorununu çözün!</p>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}
+    <form action="{{ url_for('submit_form') }}" method="post" class="form">
+      <!-- Hidden inputs for previous answers -->
+      <input type="hidden" name="size" value="{{ size }}">
+      <input type="hidden" name="lights" value="{{ lights }}">
+      <input type="hidden" name="device" value="{{ device }}">
+      <input type="hidden" name="result" value="{{ result }}">
+
+      <div class="user">
+        <ul class="user-info">
+          <li class="user-info__item">
+            <label for="name">Sizin adınız</label>
+            <input type="text" name="name" id="name" placeholder="Tam adınızı girin" required>
+          </li>
+          <li class="user-info__item">
+            <label for="email">E-posta</label>
+            <input type="email" name="email" id="email" placeholder="E-posta adresinizi girin" required>
+          </li>
+        </ul>
+
+        <ul class="address-date">
+          <li class="user-info__item">
+            <label for="address">Adresinizi belirtin</label>
+            <input type="text" name="address" id="address" placeholder="Adresiniz" required>
+          </li>
+          <li class="user-info__item">
+            <label for="date">Uzmanlarımızın gelmesi için rahat olduğunuz tarihi belirtin</label>
+            <input type="date" name="date" id="date" required>
+          </li>
+        </ul>
+      </div>
+
+      <button class="button" type="submit">Hazır!</button>
+    </form>
+    {% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Enerji Verimlilik Hesaplayıcısı</p>
+  </footer>
+</body>
+</html>

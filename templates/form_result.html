@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Form Sonucu</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__text">
+      <h1>Form Sonucu</h1>
+      <p>Gönderdiğiniz bilgiler aşağıda gösterilmektedir.</p>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="main__title main__title--margin">Kullanıcı Bilgileri</h2>
+    <div class="main__rez">
+      <p><strong>Ad:</strong> {{ name }}</p>
+      <p><strong>E-posta:</strong> {{ email }}</p>
+      <p><strong>Adres:</strong> {{ address }}</p>
+      <p><strong>Tarih:</strong> {{ date }}</p>
+    </div>
+
+    <div style="text-align:center; margin-top:50px;">
+      <a href="{{ url_for('index') }}" class="main__link">Ana Sayfaya Dön</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Enerji Verimlilik Hesaplayıcısı</p>
+  </footer>
+</body>
+</html>

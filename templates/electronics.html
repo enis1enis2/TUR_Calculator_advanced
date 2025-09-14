@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Akıllı Evler için Enerji Verimlilik Hesaplayıcısı</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__text">
+      <h1>Evinizin enerji verimliliğini hesaplayın!</h1>
+      <p>Girişimde bulunun ve aşırı enerji tüketimi sorununu çözün!</p>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="main__title">Elektrik kullanan cihazların sayısını belirtin:</h2>
+    <ul class="list" id="list">
+      <li class="list__item">
+        <a href="{{ size }}/5">
+          <img class="item__img" src="{{ url_for('static', filename='img/battery.svg') }}" alt="3-5 cihaz ikonu">
+          <span>3-5 cihaz</span>
+        </a>
+      </li>
+      <li class="list__item">
+        <a href="{{ size }}/8">
+          <img class="item__img" src="{{ url_for('static', filename='img/battery.svg') }}" alt="6-8 cihaz ikonu">
+          <span>6-8 cihaz</span>
+        </a>
+      </li>
+      <li class="list__item">
+        <a href="{{ size }}/10">
+          <img class="item__img" src="{{ url_for('static', filename='img/battery.svg') }}" alt="10+ cihaz ikonu">
+          <span>10+ cihaz</span>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Enerji Verimlilik Hesaplayıcısı</p>
+  </footer>
+</body>
+</html>

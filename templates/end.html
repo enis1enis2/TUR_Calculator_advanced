@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Akıllı Evler için Enerji Verimlilik Hesaplayıcısı</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__text">
+      <h1>Evinizin enerji verimliliğini hesaplayın!</h1>
+      <p>Girişimde bulunun ve aşırı enerji tüketimi sorununu çözün!</p>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="main__title main__title--margin">Evinizin enerji verimliliği:</h2>
+    <div class="main__rez" id="end">
+        {% if result <= 150 %}
+            <img class="rez__img" src="{{ url_for('static', filename='img/planet_good.svg') }}" alt="Enerji verimli">
+            <span>Sonucunuz {{ result }} kWh</span>
+            <span>Eviniz enerji tüketimi konusunda son derece verimlidir!</span>
+        {% elif result > 150 and result < 300 %}
+            <img class="rez__img" src="{{ url_for('static', filename='img/planet_medium.svg') }}" alt="Orta verimli">
+            <span>Sonucunuz {{ result }} kWh</span>
+            <span>Evınızın enerji verimliliği orta düzeydedir!</span>
+        {% elif result >= 300 %}
+            <img class="rez__img" src="{{ url_for('static', filename='img/planet_bad.svg') }}" alt="Düşük verimli">
+            <span>Sonucunuz {{ result }} kWh</span>
+            <span>Evınızın enerji verimliliği ortalamadan düşüktür!</span>
+        {% endif %}
+    </div>
+
+    {% if result >= 250 %}
+      <div style="text-align:center; margin-top:30px;">
+        <a href="{{ url_for('solutions') }}" class="main__link" style="background-color: red; color: white;">
+          ⚡ Çözüm Önerilerine Git
+        </a>
+      </div>
+    {% endif %}
+
+    <!-- Form'a Git Butonu -->
+    <div style="text-align:center; margin-top:50px;">
+      <a href="{{ url_for('form', size=size, lights=lights, device=device, result=result) }}" class="main__link">Form’a gidin</a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Enerji Verimlilik Hesaplayıcısı</p>
+  </footer>
+</body>
+</html>

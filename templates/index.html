@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Akıllı Evler için Enerji Verimlilik Hesaplayıcısı</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__text">
+      <h1>Evinizin enerji verimliliğini hesaplayın!</h1>
+      <p>Girişimde bulunun ve aşırı enerji tüketimi sorununu çözün</p>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="main__title">Evinizin büyüklüğünü seçin:</h2>
+    <ul class="list">
+      <li class="list__item">
+        <a href="/1">
+          <img class="item__img" src="{{ url_for('static', filename='img/home.svg') }}" alt="Küçük ev ikonu">
+          <span>Küçük bir ev</span>
+        </a>
+      </li>
+      <li class="list__item">
+        <a href="/2">
+          <img class="item__img" src="{{ url_for('static', filename='img/home.svg') }}" alt="Orta ev ikonu">
+          <span>Orta büyüklükte bir ev</span>
+        </a>
+      </li>
+      <li class="list__item">
+        <a href="/3">
+          <img class="item__img" src="{{ url_for('static', filename='img/home.svg') }}" alt="Büyük ev ikonu">
+          <span>Büyük bir ev</span>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Enerji Verimlilik Hesaplayıcısı</p>
+  </footer>
+</body>
+</html>

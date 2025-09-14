@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Enerji Verimliliği İçin Çözüm Önerileri</title>
+</head>
+<body>
+  <!-- ÜST KISIM -->
+  <header class="header">
+    <div class="header__text">
+      <h1>Enerji Verimliliği İçin Öneriler</h1>
+      <p>Daha sürdürülebilir bir gelecek için küçük adımlar atın!</p>
+    </div>
+  </header>
+
+  <!-- ANA KISIM -->
+  <main>
+    <h2 class="main__title">Evinizin Enerji Tüketimini Azaltmanın Yolları</h2>
+
+    <div class="solutions">
+      <div class="solution-card">
+        <h3>LED Aydınlatma Kullanın</h3>
+        <p>LED ampuller, akkor ampullere göre %80’e kadar daha az enerji harcar ve çok daha uzun ömürlüdür.</p>
+      </div>
+
+      <div class="solution-card">
+        <h3>Akıllı Prizler Kullanın</h3>
+        <p>Stand-by durumundaki cihazların elektriğini tamamen keserek gereksiz tüketimi önleyebilirsiniz.</p>
+      </div>
+
+      <div class="solution-card">
+        <h3>Yalıtımı Güçlendirin</h3>
+        <p>Kapı, pencere ve duvar yalıtımı ile kışın ısı kaybını, yazın aşırı ısınmayı önleyin.</p>
+      </div>
+
+      <div class="solution-card">
+        <h3>Enerji Sınıfı Yüksek Cihazlar</h3>
+        <p>A++ veya üzeri sınıfa sahip beyaz eşyalar, daha az enerji harcayarak faturalarınızı düşürür.</p>
+      </div>
+
+      <div class="solution-card">
+        <h3>Güneş Enerjisi Kullanın</h3>
+        <p>Çatınıza kurulacak güneş panelleri ile kendi elektriğinizi üretebilir, faturalarınızı ciddi oranda azaltabilirsiniz.</p>
+      </div>
+
+      <div class="solution-card">
+        <h3>Su Isıtıcısını Verimli Kullanın</h3>
+        <p>Gereksiz yere uzun süre çalıştırmayın, sıcaklığı ihtiyacınıza göre ayarlayın.</p>
+      </div>
+    </div>
+
+    <!-- Anasayfaya Dön -->
+    <div style="text-align:center; margin-top:50px;">
+      <a href="{{ url_for('index') }}" class="main__link">Anasayfaya Dön</a>
+    </div>
+  </main>
+
+  <!-- ALT KISIM -->
+  <footer class="footer">
+    <p>&copy; 2025 Enerji Verimlilik Hesaplayıcısı</p>
+  </footer>
+</body>
+</html>
